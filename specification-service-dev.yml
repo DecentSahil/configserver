@@ -1,0 +1,37 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/specification_db
+    username: postgres
+    password: postgres
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+    open-in-view: false
+    properties:
+      hibernate:
+        format_sql: true
+        jdbc:
+          time_zone: UTC
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+
+logging:
+  level:
+    root: INFO
+    com.requirement: DEBUG
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics,prometheus
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+
+app:
+  specification:
+    key-prefix: SPEC
