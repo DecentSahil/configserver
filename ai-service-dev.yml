@@ -13,6 +13,7 @@ spring:
         options:
           model: llama3.1:8b
           temperature: 0.2
+          num-predict: 2048
           
   jackson:
     serialization:
