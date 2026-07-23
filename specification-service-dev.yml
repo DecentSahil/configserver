@@ -24,7 +24,7 @@ spring:
         config:
           AI-SERVICE:
             connectTimeout: 3000
-            readTimeout: 40000
+            readTimeout: 400000
 
 resilience4j:
   timelimiter:
