@@ -18,6 +18,8 @@ spring:
         dialect: org.hibernate.dialect.PostgreSQLDialect
   cloud:
     openfeign:
+      circuitbreaker:
+        enabled: true
       client:
         config:
           AI-SERVICE:
