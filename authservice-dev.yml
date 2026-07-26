@@ -3,9 +3,10 @@ server:
 
 spring:
   datasource:
-    url: jdbc:mysql://localhost:3306/auth_db
-    username: "{cipher}564cdfa955af83e32cff03b7d67f376346c5a874f5adf85d24f65ec5d50c4623"
-    password: "{cipher}2aea912952da1b8aca47a0f97e8406680de25022e50356fcf44d5263fbdcdfcb"
+    url: jdbc:postgresql://localhost:5432/projectdb
+    username: "{cipher}9cbeeec460563185278ff57238498f66c1b92303c96d0e829a645fed0f54d4ce"
+    password: "{cipher}7f87dc9deba3672be3347eb9f941ee4854315132312bdb2994c38d9e1a2428af"
+    driver-class-name: org.postgresql.Driver
 
   data:
     redis:
