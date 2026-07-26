@@ -1,0 +1,73 @@
+server:
+  port: 9091
+
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/auth_db
+    username: "{cipher}564cdfa955af83e32cff03b7d67f376346c5a874f5adf85d24f65ec5d50c4623"
+    password: "{cipher}2aea912952da1b8aca47a0f97e8406680de25022e50356fcf44d5263fbdcdfcb"
+
+  data:
+    redis:
+      host: localhost
+      port: 6379
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+
+    show-sql: true
+
+    properties:
+      hibernate:
+        format_sql: true
+
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: "{cipher}f6142bbcf949c575f5b227e042861ae068f92560fa6feed9c90ad343e9cd4bc2076cd42de9003904f85345975650f532"
+    password: "{cipher}ae40000c091810033c3a25f45fc4d148535ee9fa7c3fd96af4b25c1e4c6ce5dbffa1ea038c6c71409b534acdaeb0991c"
+
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+            required: true
+
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            client-id: "{cipher}d5c4a5402014c0c50cfed76a37b2034086730f727c56b52d271780f8e137e90d7a9ef26c2559cf1f97c8b2160fdbf31f5ff58c21dff4aba04d553e21c63772080902bf3e8f563a386a2528b6f8642c8e7d87343af003294641c0bb0d19dc0d50"
+            client-secret: "{cipher}e8f55dd80957548ad3a869119222e2ccc77ec7fc1c5049d2c8e6614f9efc7b1a5411e4c588fd04566a71821e688e8619843ae02307d3132014a4eacff16340d9"
+            scope:
+              - email
+              - profile
+
+app:
+  frontend-url: http://localhost:5173
+
+  jwt:
+    secret: "{cipher}6cb3934c0daadac6740b996f66dc280e0e82efc77b349e268ffbd57e3c820fb7e40c1776a099aed8ec9e76af5a9455cc4e42954ec34ac2f91057b4d0beae2b00"
+    expiration: 86400000
+
+eureka:
+  instance:
+    hostname: localhost
+    prefer-ip-address: true
+
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+
+logging:
+  level:
+    web: TRACE
+    org.springframework.web: TRACE
+
+springdoc:
+  swagger-ui:
+    url: /v3/api-docs
