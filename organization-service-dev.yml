@@ -1,0 +1,56 @@
+server:
+  port: 8083
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/auth_db
+    username: "{cipher}9cbeeec460563185278ff57238498f66c1b92303c96d0e829a645fed0f54d4ce"
+    password: "{cipher}7f87dc9deba3672be3347eb9f941ee4854315132312bdb2994c38d9e1a2428af"
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+
+    show-sql: true
+
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: "{cipher}f6142bbcf949c575f5b227e042861ae068f92560fa6feed9c90ad343e9cd4bc2076cd42de9003904f85345975650f532"
+    password: "{cipher}ae40000c091810033c3a25f45fc4d148535ee9fa7c3fd96af4b25c1e4c6ce5dbffa1ea038c6c71409b534acdaeb0991c"
+
+
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+            required: true
+
+eureka:
+  instance:
+    hostname: localhost
+    prefer-ip-address: true
+
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+
+springdoc:
+  api-docs:
+    path: /v3/api-docs
+
+  swagger-ui:
+    path: /swagger-ui.html
+
+logging:
+  level:
+    com.springboard7.organization: DEBUG
+    org.hibernate.SQL: DEBUG
