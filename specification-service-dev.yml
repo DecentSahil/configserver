@@ -22,17 +22,14 @@ spring:
         enabled: true
       client:
         config:
+          PROJECT-SERVICE:
+            connectTimeout: 3000
+            readTimeout: 5000
           AI-SERVICE:
             connectTimeout: 3000
             readTimeout: 400000
 
 resilience4j:
-  timelimiter:
-    instances:
-      AIServiceClientgenerateRequirementsGenerateRequirementRequest:
-        timeoutDuration: 60s
-        cancelRunningFuture: true
-
   retry:
     instances:
       ai-service:
