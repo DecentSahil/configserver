@@ -4,14 +4,16 @@ spring:
       enabled: true
 
   rabbitmq:
-    host: rabbitmq
+    host: localhost
     port: 5672
+    username: guest
+    password: guest
 
 eureka:
   client:
     enabled: true
     service-url:
-      defaultZone: ${EUREKA_URL:http://localhost:8761/eureka/}
+      defaultZone: http://localhost:8761/eureka/
 
   instance:
     prefer-ip-address: true
