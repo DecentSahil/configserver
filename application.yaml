@@ -6,3 +6,12 @@ spring:
   rabbitmq:
     host: rabbitmq
     port: 5672
+
+eureka:
+  client:
+    enabled: true
+    service-url:
+      defaultZone: ${EUREKA_URL:http://localhost:8761/eureka/}
+
+  instance:
+    prefer-ip-address: true
