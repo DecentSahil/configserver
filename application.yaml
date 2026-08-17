@@ -1,0 +1,8 @@
+spring:
+  cloud:
+    bus:
+      enabled: true
+
+  rabbitmq:
+    host: rabbitmq
+    port: 5672
